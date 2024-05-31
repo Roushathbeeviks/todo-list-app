@@ -4,8 +4,7 @@ import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 
 function App() {
-  const [todos,setTodos] = useState([]) //for the set of value
-  const [todo,setTodo] = useState('') // for input fields(typing letters)
+  const [todos,setTodos] = useState([]) //todo list array
 
   useEffect(()=>{
     const initial=[{id:1, text:'React',status:false}, {id:2, text:'Angular',status:true}];
@@ -35,7 +34,7 @@ function App() {
     </div>
     <div className="subHeading">
       <br />
-      <h2>Whoop, it's my skill set  🌝☕ </h2>
+      <h2>Whoop, it's my skill set . . . .</h2>
     </div>
     <div>
       <TodoInput addTodo={addTodo}/>

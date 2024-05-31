@@ -2,8 +2,8 @@ import React from 'react'
 import { useState } from 'react';
 
 const TodoInput = ({ addTodo }) => {
-    const [inputValue, setInputValue] = useState('');
-    const handleSubmit = (e) => {
+    const [todo,setTodo] = useState('');
+    const addTodo = (e) => {
       e.preventDefault();
       if (inputValue.trim()) {
         addTodo(inputValue);
@@ -12,9 +12,9 @@ const TodoInput = ({ addTodo }) => {
     };
       return (
       <div className='input'>
-         <input type="text"  value={inputValue} onChange={(e) => setInputValue(e.target.value)} placeholder="🖊️ Add item..." 
+         <input type="text"  value={todo} onChange={(e) => setTodo(e.target.value)} placeholder="🖊️ Add item..." 
          style={{display:'flex', justifyContent:'space-between'}} />
-          <i onClick={handleSubmit} className="fas fa-plus"></i>
+          <i onClick={addTodo} className="fas fa-plus"></i>
       </div>
     );
   };
