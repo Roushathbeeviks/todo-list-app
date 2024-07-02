@@ -1,14 +1,13 @@
 
 import React from 'react'
-import './TodoList.css'
+import TodoItem from './TodoItem'
+
 function TodoList({todos,status,deleteTodo}) {
   return (
     <div>
       {todos.map((todo) =>(
-        <div className='list-input'>
-            <input value={todo.status} onClick={() => status(todo.id)} checked={todo.status} type='checkbox'></input>
-            <p>{todo.text}</p>
-            <i class="fa fa-ban" onClick={() => deleteTodo(todo.id)} aria-hidden="true"></i>
+        <div>
+          <TodoItem key={todo.id} todo={todo} toggleComplete={status} deleteTodo={deleteTodo}/>
         </div>
         ))}
     </div>
